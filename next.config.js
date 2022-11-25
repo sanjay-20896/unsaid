@@ -30,7 +30,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
         // },
         {
           // it's possible to match all locales even when locale: false is set
-          source: '/:locale/:path*',
+          source: '/(en|fr|de)/:path*',
           destination: '/:path*',
           locale: false,
         },
