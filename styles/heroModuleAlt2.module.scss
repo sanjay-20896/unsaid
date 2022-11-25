@@ -1,0 +1,85 @@
+@import "variables";
+.container{
+    background:#ffffff;
+    //min-height:calc(100vh - var(--header-height-desktop-rem));
+}
+.videoContainer{
+    margin:0 auto;
+    text-align:center;
+    width:calc(100% - var(--padding-left-desktop-rem) - var(--padding-left-desktop-rem));
+    //height: calc(100vh - var(--header-height-desktop-rem) - 18.7rem);
+    background-color:#f2f2f2;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.video{
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    position:relative;
+    z-index:4;
+}
+.heroText{
+    margin-top:6.4rem;
+    padding: 0 35%;
+    position:relative;
+    z-index:2;
+}
+@media screen and (max-width: $MEDIUM_BREAKPOINT){
+    .container{
+        //min-height:calc(100vh - var(--header-height-medium-rem));
+    }
+    .videoContainer{
+        width:calc(100% - var(--padding-left-medium-rem) - var(--padding-right-medium-rem));
+        //height: calc(100vh - var(--header-height-medium-rem) - 15.7rem);
+    }
+    .heroText {
+        padding: 0 33%;
+    }
+}
+@media screen and (max-width: $TABLET_LANDSCAPE_BREAKPOINT){
+    .container{
+        //min-height:calc(100vh - var(--header-height-tablet-rem));
+    }
+    .videoContainer{
+        width:calc(100% - var(--padding-left-tablet-landscape-rem) - var(--padding-right-tablet-landscape-rem));
+        //height: calc(100vh - var(--header-height-tablet-rem) - 13.7rem);
+    }
+    .heroText {
+        padding: 0 30%;
+    }
+}
+@media screen and (max-width: $TABLET_PORTRAIT_BREAKPOINT){
+    .videoContainer{
+        width:calc(100% - var(--padding-left-tablet-portrait-rem) - var(--padding-right-tablet-portrait-rem));
+    }
+    .heroText {
+        padding: 0 25.5%;
+    }
+}
+@media screen and (max-width: $MOBILE_BREAKPOINT){
+    .videoContainer{
+        width:100%;
+        //height: calc(var(--window-height-2) - 21.6rem);
+    }
+    .container{
+        //min-height:calc(var(--window-height-2) - var(--header-height-mobile-rem));
+    }
+    .heroText{
+        padding: 0 2rem;
+        margin-top:6rem;
+    }
+}
+@media screen and (min-width: 1373px){
+    .heroText{
+        padding: 0 35%;
+    }
+}
+@media screen and (min-width: 1696px){
+    .heroText{
+        padding: 0 36%;
+    }
+}

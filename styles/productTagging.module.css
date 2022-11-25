@@ -1,0 +1,179 @@
+
+.price{
+    letter-spacing:1px;
+    font-size:1.4rem;
+    line-height:2.1rem;
+}
+.productTag .productInfo{
+    position:absolute;
+    width: max-content;
+    left: 2.7rem;
+    padding-left: 1rem;
+    top: 0;
+    opacity:0;
+    transform:translateY(-1rem);
+    pointer-events:none;
+    z-index:-9;
+    transition:all 0.3s ease-out;
+}
+.productTag.leftAppear .productInfo{
+    left: auto;
+    right:0rem;
+    text-align: right;
+    padding-right:4rem;
+}
+.productTag.aboveAppear .productInfo{
+    top: -5rem;
+    padding-bottom: 1rem;
+    left: 0rem;
+    padding-left: 1rem;
+}
+.productTag.belowAppear .productInfo{
+    top: 2.5rem;
+    left: 0;
+    padding-top: 1rem;
+    padding-left:1rem;
+}
+.productTag.belowLeft .productInfo{
+    text-align: right;
+    top: 2rem;
+    right: 0rem;
+    left: auto;
+    padding-top: 1rem;
+    padding-left:0;
+    padding-right:1rem;
+}
+.hover .productInfo{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+    z-index:9;
+}
+.productTag{
+    position:absolute;
+    left:${props.positionFromLeftValue};
+    right:${props.positionFromTopValue};
+    height: 2.4rem;
+    width: 2.4rem;
+    border:0.1rem solid #FFFFFF;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:2;
+}
+.symbolContainer{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.symbolContainer::after{
+    position:absolute;
+    content:"";
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:1px;
+    width:1.2rem;
+    background:#FFFFFF;
+    transition:all 0.3s ease-out;
+}
+.symbolContainer::before{
+    position:absolute;
+    content:"";
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:1.2rem;
+    width:1px;
+    background:#FFFFFF;
+    transition:all 0.3s ease-out;
+}
+.shopIcon{
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:all 0.3s ease-out;
+}    
+.shopIcon,.productInfo{
+    pointer-events:none;
+}
+.hover .shopIcon,.hover .productInfo{
+    pointer-events:auto;
+}
+.shopIcon img{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:1.2rem;
+}
+.hover .shopIcon{
+    opacity:1;
+}
+.hover .symbolContainer::after{
+    opacity:0;
+} 
+.hover .symbolContainer::before{
+    opacity:0;
+}
+@media screen and (max-width: ${MOBILE_BREAKPOINT}px){
+    .shopIcon img{
+        width: 1.2rem;
+    }
+    .productInfo{
+        width: max-content;
+    }
+    .productTag .productInfo{
+        left: 4rem;
+        top: -0.5rem;
+    }
+   
+    .productTag.leftAppear .productInfo{
+        left:auto;
+        right:4.5rem;
+        padding-right:0;
+    }
+    .productTag.aboveAppear .productInfo{
+        top: -5rem;
+        left:0rem;
+    }
+    .productTag.belowAppear .productInfo{
+        top: 2rem;
+        left:0rem;
+    }
+    .productTag.belowLeft .productInfo{
+        top: 2rem;
+        left:auto;
+        right:0;
+    }
+    .productTag{
+        height:2.4rem;
+        width:2.4rem;
+        left:calc(${props.positionFromLeft} - 1.2rem);
+        top:calc(${props.positionFromTop} - 1.2rem);
+    }
+    .symbolContainer::after{
+        width:1.2rem;
+    }
+    .symbolContainer::before{
+        height:1.2rem;
+    }
+   
+    .productTag.hotspotActive .productInfo{
+        opacity:1;
+        transform:translateY(0);
+        pointer-events:auto;
+        z-index:9;
+        padding-left: 0;
+    }
+   
+    .symbolContainer:hover::before{
+        transform:translate(-50%,-50%);
+    } 
+    
+    .productTag.hotspotActive .productInfo{
+        opacity:1;
+        transform:translateY(0);
+        pointer-events:auto;
+        z-index:9;
+    }
+}
